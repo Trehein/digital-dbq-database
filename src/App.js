@@ -1,24 +1,55 @@
-import logo from './logo.svg';
 import './App.css';
+import { Provider } from 'react-redux'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore' // <- needed if using firestore
+import { createStore, combineReducers } from 'redux'
+import {
+  ReactReduxFirebaseProvider,
+  firebaseReducer
+} from 'react-redux-firebase'
+import { createFirestoreInstance, firestoreReducer } from 'redux-firestore' // <- needed if using firestore
+
+import conf from './config/conf'
+
+const fbConfig = conf;
+
+// react-redux-firebase config
+const rrfConfig = {
+  userProfile: 'users',
+  useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
+  attachAuthIsReady: true
+}
+
+// console.log(conf)
+
+firebase.initializeApp(fbConfig)
+firebase.firestore()
+
+const rootReducer = combineReducers({
+  firebase: firebaseReducer,
+  firestore: firestoreReducer
+})
+
+const initialState = {}
+const store = createStore(rootReducer, initialState)
+
+const rrfProps = {
+  firebase,
+  config: rrfConfig,
+  dispatch: store.dispatch,
+  createFirestoreInstance
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <div className="App">
+
+        </div>
+      </ReactReduxFirebaseProvider>
+    </Provider>
   );
 }
 
