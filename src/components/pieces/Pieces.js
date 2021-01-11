@@ -1,10 +1,15 @@
 import React from 'react'
+import { motion } from "framer-motion"
 
 const Pieces = () => {
     return (
-        <div className="container">
+        <motion.div className="container"
+            initial={{ x: '100vw' }}
+            animate={{ x: 0 }}
+            transition={{ type: 'spring', delay: 0.25 }}
+        >
             Pieces
-        </div>
+        </motion.div>
     )
 }
 

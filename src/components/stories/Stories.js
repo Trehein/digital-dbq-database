@@ -1,12 +1,17 @@
 import React from 'react'
+import { motion } from "framer-motion"
 
 const Stories = () => {
     return (
-        <div className="container">
+        <motion.div className="container"
+            initial={{ x: '100vw' }}
+            animate={{ x: 0 }}
+            transition={{ type: 'spring', delay: 0.25 }}
+        >
             <h2>
                 Stories
             </h2>
-        </div>
+        </motion.div>
     )
 }
 
