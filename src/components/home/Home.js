@@ -12,8 +12,12 @@ const Home = () => {
             <Link to="/stories">
                 <motion.button
                     initial={{  }}
-                    animate={{  }}
-                    transition={{ type: 'spring', stiffness: 120 }}
+                    whileHover={{ 
+                        scale: 1.1, 
+                        textShadow: "0px 0px 8px rgb(255,255,255)",
+                        boxShadow: "0px 0px 8px rgb(255,255,255)"
+                    }}
+                    transition={{ type: 'spring', stiffness: 100 }}
                 >
                     To Stories
                 </motion.button>
@@ -21,7 +25,11 @@ const Home = () => {
             <Link to="/pieces">
                 <motion.button
                     initial={{  }}
-                    animate={{  }}
+                    whileHover={{ 
+                        scale: 1.1, 
+                        textShadow: "0px 0px 8px rgb(255,255,255)",
+                        boxShadow: "0px 0px 8px rgb(255,255,255)"
+                    }}
                     transition={{ }}
                 >
                     To Pieces
@@ -30,7 +38,11 @@ const Home = () => {
             <Link to="/bits">
                 <motion.button
                     initial={{  }}
-                    animate={{  }}
+                    whileHover={{ 
+                        scale: 1.1, 
+                        textShadow: "0px 0px 8px rgb(255,255,255)",
+                        boxShadow: "0px 0px 8px rgb(255,255,255)"
+                    }}
                     transition={{ }}
                 >
                     To Bits
@@ -39,6 +51,12 @@ const Home = () => {
             <Link to="/about">
                 <motion.button
                     initial={{  }}
+                    whileHover={{ 
+                        scale: 1.1,
+                        textShadow: "0px 0px 8px rgb(255,255,255)",
+                        boxShadow: "0px 0px 8px rgb(255,255,255)" 
+                        
+                    }}
                     animate={{ x: 20 }}
                     transition={{ }}
                 >

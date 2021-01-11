@@ -10,6 +10,11 @@ const Header = () => {
       <motion.div className="logo"
         initial={{ x: -200 }}
         animate={{ x: 0 }}
+        whileHover={{ 
+            scale: 1.1, 
+            textShadow: "0px 0px 8px rgb(255,255,255)",
+            boxShadow: "0px 0px 8px rgb(255,255,255)"
+        }}
         transition={{ duration: .5, type: 'spring', stiffness: 65 }}
       >
           <Link to="/">

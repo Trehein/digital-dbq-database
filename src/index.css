@@ -18,8 +18,8 @@ body, ul, h1, h2, h3, p, button, a, div{
   text-decoration: none;
 }
 body{
-  background: rgba(48,63,159 ,1);
-  background: radial-gradient(circle, rgba(48,63,159 ,1) 0%, rgba(26,35,126 ,1) 100%);
+  background: rgba(30,136,229 ,1);
+  background: radial-gradient(circle, rgba(30,136,229 ,1) 0%, rgba(26,35,126 ,1) 100%);
   overflow: hidden;
 }
 button{
